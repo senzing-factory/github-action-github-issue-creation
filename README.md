@@ -1,4 +1,4 @@
-# Git Issue Creation
+# Git Action Git Issue Creation
 
 Git Action to create an Issue on a GitHub Repo. This action can be used to create an issue when a build fails in a Git Action workflow. 
 
@@ -20,12 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: Git Creation Demo
-        uses: bryan-nice/git-issue-creation@master
+        uses: senzing/git-action-git-issue-creation@1.0.0
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_COMMIT_SHA: ${{ github.sha }}
-          GITHUB_REPO_OWNER: 'bryan-nice'
-          GITHUB_REPO_NAME: 'github-issue-creation'
+          GITHUB_REPO_OWNER: 'Senzing'
+          GITHUB_REPO_NAME: 'git-action-github-issue-creation'
           GITHUB_ISSUE_TITLE: 'Demo''ing Git Issue Creation'
           GITHUB_ISSUE_BODY: 'Demo''ing Git Issue Creation'
 ```
