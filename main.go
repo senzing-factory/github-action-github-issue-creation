@@ -4,9 +4,9 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
-	"github.com/bryan-nice/git-issue-creation/configuration"
 	"github.com/google/go-github/github"
 	"github.com/pkg/errors"
+	"github.com/senzing/git-action-git-issue-creation/configuration"
 	"golang.org/x/oauth2"
 	"log"
 )

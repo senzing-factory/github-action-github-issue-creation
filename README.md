@@ -120,4 +120,4 @@ These are the environment variables that can be set to pass in additional inform
 * [Authenticating with the GITHUB_TOKEN](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token)
 
 ## License
-[GPLv3](LICENSE)
+[Apache 2](LICENSE)

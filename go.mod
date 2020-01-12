@@ -1,4 +1,4 @@
-module github.com/bryan-nice/git-issue-creation
+module github.com/senzing/git-action-git-issue-creation
 
 go 1.13
 

@@ -16,11 +16,11 @@ RUN apk update && \
 WORKDIR /go/src
 
 # Clone repo
-RUN git clone https://github.com/bryan-nice/git-issue-creation.git
+RUN git clone https://github.com/senzing/git-action-git-issue-creation.git
 
 # Checkout to target branch and if not master, then locally test
 # merging master into branch.
-WORKDIR /go/src/git-issue-creation
+WORKDIR /go/src/git-action-git-issue-creation
 RUN git checkout ${GITHUB_HEAD_REF}; \
     if [[ "${GITHUB_HEAD_REF}" != "master" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
         git merge master; \
@@ -36,11 +36,11 @@ FROM alpine:3.10
 
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="purple"
-LABEL "com.github.actions.name"="Git Issue Creation"
+LABEL "com.github.actions.name"="Git Action Git Issue Creation"
 LABEL "com.github.actions.description"="Create a Git Issue"
 
-COPY --from=BUILD /go/bin/git-issue-creation /usr/bin
-COPY --from=BUILD /go/src/git-issue-creation/LICENSE /
-COPY --from=BUILD /go/src/git-issue-creation/README.md /
+COPY --from=BUILD /go/bin/git-action-git-issue-creation /usr/bin
+COPY --from=BUILD /go/src/git-action-git-issue-creation/LICENSE /
+COPY --from=BUILD /go/src/git-action-git-issue-creation/README.md /
 
-ENTRYPOINT ["git-issue-creation"]
+ENTRYPOINT ["git-action-git-issue-creation"]
