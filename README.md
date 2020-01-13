@@ -36,8 +36,8 @@ Go [here](deployment/git-actions/template_github_issue_creation.yml) for a templ
 
 These are the environment variables that can be set to pass in additional information about the Git Action.
 
-| Variable Name      | Required | Description    |
-|--------------------|----------|:--------------:|
+| Variable Name      | Required | Description |
+|--------------------|:--------:|-------------|
 | GITHUB_ISSUE_BODY  | Yes      | Body of the issue to be created. |
 | GITHUB_ISSUE_TITLE | Yes      | Title of the issue to be created. |
 | GITHUB_OWNER       | Yes      | The owner of the repo which is normally seen in the URI as a prefix to the repo. |
