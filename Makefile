@@ -1,22 +1,21 @@
-# -------------
+# -----------------------------------------------------------------------------
 # VARIABLES
-# -------------
+# -----------------------------------------------------------------------------
+
 # Git variables
+
 GIT_REPOSITORY_NAME := $(shell basename `git rev-parse --show-toplevel`)
 GIT_VERSION := $(shell git describe --always --tags --long --dirty | sed -e 's/\-0//' -e 's/\-g.......//')
 
 # Docker variables
+
 DOCKER_IMAGE_TAG ?= $(GIT_REPOSITORY_NAME):$(GIT_VERSION)
 DOCKER_IMAGE_NAME := senzing/template
 
-# -------------
-# FUNCTIONS
-# -------------
-
-
-# -------------
+# -----------------------------------------------------------------------------
 # TASKS
-# -------------
+# -----------------------------------------------------------------------------
+
 .PHONY: fmt
 fmt:
 	@gofmt -w -s -d configuration

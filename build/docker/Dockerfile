@@ -34,6 +34,10 @@ RUN make build
 # -----------------------------------------------------------------------------
 FROM alpine:3.10
 
+LABEL Name="senzing/git-action-git-issue-creation" \
+      Maintainer="support@senzing.com" \
+      Version="1.0.0"
+
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="purple"
 LABEL "com.github.actions.name"="Git Action Git Issue Creation"

@@ -1,12 +1,12 @@
-name: 'Git Action Git Issue Creation'
-description: 'Git issue created by Git Actions'
-author: 'Senzing'
+name: Git Action Git Issue Creation
+description: Git issue created by Git Actions
+author: Senzing
 branding:
-  icon: 'message-square'
-  color: 'purple'
+  icon: message-square
+  color: purple
 outputs:
   git_issue_url:
-    description: 'Url to the git issue created'
+    description: Url to the git issue created
 runs:
-  using: 'docker'
-  image: 'docker://senzing/git-action-git-issue-creation:1.0.0'
+  using: docker
+  image: docker://senzing/git-action-git-issue-creation:1.0.0
