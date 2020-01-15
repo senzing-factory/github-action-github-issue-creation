@@ -9,9 +9,9 @@ jobs:
       - name: Git Creation Demo
         uses: senzing/git-action-git-issue-creation@1.0.0
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          GITHUB_SHA: ${{ github.sha }}
-          GITHUB_OWNER: 'Senzing'
+          GITHUB_ISSUE_BODY: Demo'ing Git Issue Creation
+          GITHUB_ISSUE_TITLE: Demo'ing Git Issue Creation
+          GITHUB_OWNER: Senzing
           GITHUB_REPOSITORY: git-action-github-issue-creation
-          GITHUB_ISSUE_TITLE: 'Demo''ing Git Issue Creation'
-          GITHUB_ISSUE_BODY: 'Demo''ing Git Issue Creation'
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
