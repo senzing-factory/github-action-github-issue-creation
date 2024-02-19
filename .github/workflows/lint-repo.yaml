@@ -9,3 +9,5 @@ on:
 jobs:
   lint-code-base:
     uses: senzing-factory/build-resources/.github/workflows/linter.yaml@v1
+    with:
+      validate-all-codebase: true
