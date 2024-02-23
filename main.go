@@ -56,8 +56,8 @@ func main() {
 		issueRequest = new(github.IssueRequest)
 		issueRequest.Title = &gitHubIssueTitle
 		issueRequest.Body = &gitHubIssueBody
-		issueCreated, _, err := client.Issues.Create(ctx, gitHubOwner, gitHubRepository, issueRequest)
-		if err != nil {
+		issueCreated, _, err2 := client.Issues.Create(ctx, gitHubOwner, gitHubRepository, issueRequest)
+		if err2 != nil {
 			log.Printf("%+v", errors.Wrap(err, "Exception"))
 		}
 		// fmt.Printf("%+v", issueCreated)
