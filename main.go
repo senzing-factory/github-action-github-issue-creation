@@ -4,11 +4,12 @@ import (
 	"context"
 	"encoding/json"
 	"fmt"
+	"log"
+
 	"github.com/google/go-github/github"
 	"github.com/pkg/errors"
 	"github.com/senzing/git-action-git-issue-creation/configuration"
 	"golang.org/x/oauth2"
-	"log"
 )
 
 func main() {
@@ -55,11 +56,11 @@ func main() {
 		issueRequest = new(github.IssueRequest)
 		issueRequest.Title = &gitHubIssueTitle
 		issueRequest.Body = &gitHubIssueBody
-		issueCreated, _, err := client.Issues.Create(ctx, gitHubOwner, gitHubRepository, issueRequest)
-		if err != nil {
+		issueCreated, _, err2 := client.Issues.Create(ctx, gitHubOwner, gitHubRepository, issueRequest)
+		if err2 != nil {
 			log.Printf("%+v", errors.Wrap(err, "Exception"))
 		}
-		//fmt.Printf("%+v", issueCreated)
+		// fmt.Printf("%+v", issueCreated)
 		result, err = json.Marshal(issueCreated.HTMLURL)
 		if err != nil {
 			log.Printf("%+v", errors.Wrap(err, "Exception"))
