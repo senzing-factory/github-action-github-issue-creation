@@ -8,12 +8,14 @@ ARG GITHUB_EVENT_NAME="push"
 
 # Add github
 RUN apk update && \
-    apk upgrade && \
-    apk add --no-cache \
-        git \
-        make
+  apk upgrade && \
+  apk add --no-cache \
+  git \
+  make
 
 WORKDIR /go/src
+
+HEALTHCHECK CMD git --version || exit 1
 
 # Clone repo
 RUN git clone https://github.com/senzing/git-action-git-issue-creation.git
@@ -22,9 +24,9 @@ RUN git clone https://github.com/senzing/git-action-git-issue-creation.git
 # merging master into branch.
 WORKDIR /go/src/git-action-git-issue-creation
 RUN git checkout ${GITHUB_HEAD_REF}; \
-    if [[ "${GITHUB_HEAD_REF}" != "master" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
-        git merge master; \
-    fi
+  if [[ "${GITHUB_HEAD_REF}" != "master" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
+  git merge master; \
+  fi
 
 # Building go app
 RUN make build
@@ -34,9 +36,9 @@ RUN make build
 # -----------------------------------------------------------------------------
 FROM alpine:3.10
 
-LABEL Name="senzing/git-action-git-issue-creation" \
-      Maintainer="support@senzing.com" \
-      Version="1.0.0"
+LABEL name="senzing/git-action-git-issue-creation" \
+  maintainer="support@senzing.com" \
+  version="1.0.0"
 
 LABEL "com.github.actions.icon"="message-square"
 LABEL "com.github.actions.color"="purple"
@@ -46,5 +48,7 @@ LABEL "com.github.actions.description"="Create a Git Issue"
 COPY --from=BUILD /go/bin/git-action-git-issue-creation /usr/bin
 COPY --from=BUILD /go/src/git-action-git-issue-creation/LICENSE /
 COPY --from=BUILD /go/src/git-action-git-issue-creation/README.md /
+
+USER 1001
 
 ENTRYPOINT ["git-action-git-issue-creation"]
