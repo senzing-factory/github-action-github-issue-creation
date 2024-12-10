@@ -1,0 +1,17 @@
+on: push
+name: GitHub Issue Creation Demo
+jobs:
+  githubIssueCreation:
+    name: GitHub Issue Creation Demo
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@master
+      - name: Git Creation Demo
+        uses: senzing-factory/github-action-github-issue-creation@1.0.0
+        env:
+          GITHUB_ISSUE_BODY: Demo'ing GitHub Issue Creation
+          GITHUB_ISSUE_TITLE: Demo'ing GitHub Issue Creation
+          GITHUB_OWNER: senzing-factory
+          GITHUB_REPOSITORY: github-action-github-issue-creation
+          GITHUB_SHA: ${{ github.sha }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
