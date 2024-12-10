@@ -16,10 +16,9 @@ func main() {
 	var issueRequest *github.IssueRequest
 	var result []byte
 	var err error
-	var config *configuration.Config
+	var config *configuration.Config = new(configuration.Config)
 
 	// Init configuration from environment variables
-	config = new(configuration.Config)
 	err = config.Init()
 	if err != nil {
 		log.Fatalf("Exception: %v", err)
@@ -73,5 +72,6 @@ func main() {
 		}
 	}
 
-	fmt.Printf(fmt.Sprintf("::set-output name=github_issue_url::%s", string(result)))
+	formatted := fmt.Sprintf("::set-output name=github_issue_url::%s", string(result))
+	fmt.Printf("%s\n", formatted)
 }
