@@ -20,12 +20,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - name: GitHub Issue Creation Demo
-        uses: senzing/github-action-github-issue-creation@1.0.0
+        uses: senzing-factory/github-action-github-issue-creation@1.0.0
         env:
           GITHUB_ISSUE_BODY: Demo'ing GitHub Issue Creation
           GITHUB_ISSUE_TITLE: Demo'ing GitHub Issue Creation
           GITHUB_REPO_NAME: github-action-github-issue-creation
-          GITHUB_REPO_OWNER: Senzing
+          GITHUB_REPO_OWNER: senzing-factory
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GITHUB_SHA: ${{ github.sha }}
 ```

@@ -18,7 +18,7 @@ WORKDIR /go/src
 HEALTHCHECK CMD git --version || exit 1
 
 # Clone repo
-RUN git clone https://github.com/senzing/github-action-github-issue-creation.git
+RUN git clone https://github.com/senzing-factory/github-action-github-issue-creation.git
 
 # Checkout to target branch and if not master, then locally test
 # merging master into branch.
@@ -36,7 +36,7 @@ RUN make build
 # -----------------------------------------------------------------------------
 FROM alpine:3.10
 
-LABEL name="senzing/github-action-github-issue-creation" \
+LABEL name="senzing-factory/github-action-github-issue-creation" \
   maintainer="support@senzing.com" \
   version="1.0.0"
 

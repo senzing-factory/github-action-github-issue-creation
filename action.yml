@@ -9,4 +9,4 @@ outputs:
     description: Url to the github issue created
 runs:
   using: docker
-  image: docker://senzing/github-action-github-issue-creation:1.0.0
+  image: docker://senzing-factory/github-action-github-issue-creation:1.0.0

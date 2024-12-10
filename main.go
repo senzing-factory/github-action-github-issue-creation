@@ -8,7 +8,7 @@ import (
 
 	"github.com/google/go-github/github"
 	"github.com/pkg/errors"
-	"github.com/senzing/github-action-github-issue-creation/configuration"
+	"github.com/senzing-factory/github-action-github-issue-creation/configuration"
 	"golang.org/x/oauth2"
 )
 
