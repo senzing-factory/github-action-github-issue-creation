@@ -8,7 +8,7 @@ import (
 
 	"github.com/google/go-github/github"
 	"github.com/pkg/errors"
-	"github.com/senzing/git-action-git-issue-creation/configuration"
+	"github.com/senzing/github-action-github-issue-creation/configuration"
 	"golang.org/x/oauth2"
 )
 
@@ -73,5 +73,5 @@ func main() {
 		}
 	}
 
-	fmt.Printf(fmt.Sprintf("::set-output name=git_issue_url::%s", string(result)))
+	fmt.Printf(fmt.Sprintf("::set-output name=github_issue_url::%s", string(result)))
 }
