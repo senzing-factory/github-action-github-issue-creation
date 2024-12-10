@@ -1,4 +1,4 @@
-module github.com/senzing-factory/github-action-git-issue-creation
+module github.com/senzing-factory/github-action-github-issue-creation
 
 go 1.13
 

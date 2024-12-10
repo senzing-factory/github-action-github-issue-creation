@@ -1,6 +1,6 @@
 # GitHub Action GitHub Issue Creation
 
-Git Action to create an Issue on a GitHub Repository. This action can be used to create an issue when a build fails in a Git Action workflow.
+GitHub Action to create an Issue on a GitHub Repository. This action can be used to create an issue when a build fails in a GitHub Action workflow.
 
 ## Usage
 
