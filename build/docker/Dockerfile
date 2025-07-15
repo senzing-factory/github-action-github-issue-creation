@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
-# Stage: BUILD
+# Stage: build
 # -----------------------------------------------------------------------------
-FROM golang:1.13.4-alpine3.10 as BUILD
+FROM golang:1.13.4-alpine3.10 AS build
 
 ARG GITHUB_HEAD_REF="master"
 ARG GITHUB_EVENT_NAME="push"
@@ -32,7 +32,7 @@ RUN git checkout ${GITHUB_HEAD_REF}; \
 RUN make build
 
 # -----------------------------------------------------------------------------
-# Stage: BUILD
+# Stage: build
 # -----------------------------------------------------------------------------
 FROM alpine:3.10
 
@@ -45,9 +45,9 @@ LABEL "com.github.actions.color"="purple"
 LABEL "com.github.actions.name"="GitHub Action GitHub Issue Creation"
 LABEL "com.github.actions.description"="Create a GitHub Issue"
 
-COPY --from=BUILD /go/bin/github-action-github-issue-creation /usr/bin
-COPY --from=BUILD /go/src/github-action-github-issue-creation/LICENSE /
-COPY --from=BUILD /go/src/github-action-github-issue-creation/README.md /
+COPY --from=build /go/bin/github-action-github-issue-creation /usr/bin
+COPY --from=build /go/src/github-action-github-issue-creation/LICENSE /
+COPY --from=build /go/src/github-action-github-issue-creation/README.md /
 
 USER 1001
 
