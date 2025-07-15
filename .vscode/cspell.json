@@ -9,6 +9,7 @@
     "CODEOWNER",
     "DOCKERHUB",
     "gofmt",
+    "gomod",
     "HTMLURL",
     "ICLA",
     "pydevproject",
@@ -16,5 +17,8 @@
     "stackoverflow",
     "toplevel"
   ],
-  "ignorePaths": [".git/**", ".gitignore"]
+  "ignorePaths": [
+    ".git/**",
+    ".gitignore"
+  ]
 }
