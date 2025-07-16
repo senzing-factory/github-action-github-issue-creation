@@ -16,7 +16,7 @@ func main() {
 	var issueRequest *github.IssueRequest
 	var result []byte
 	var err error
-	var config *configuration.Config = new(configuration.Config)
+	var config = new(configuration.Config)
 
 	// Init configuration from environment variables
 	err = config.Init()
