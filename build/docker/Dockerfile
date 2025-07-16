@@ -34,7 +34,7 @@ RUN make build
 # -----------------------------------------------------------------------------
 # Stage: build
 # -----------------------------------------------------------------------------
-FROM alpine:3.10
+FROM alpine:3.22
 
 LABEL name="senzing-factory/github-action-github-issue-creation" \
   maintainer="support@senzing.com" \
