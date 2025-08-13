@@ -1,9 +1,9 @@
 # -----------------------------------------------------------------------------
 # Stage: build
 # -----------------------------------------------------------------------------
-FROM golang:1.13.11-alpine3.10 AS build
+FROM golang:1.24.6-alpine3.22 AS build
 
-ARG GITHUB_HEAD_REF="master"
+ARG GITHUB_HEAD_REF="main"
 ARG GITHUB_EVENT_NAME="push"
 
 # Add github
@@ -20,12 +20,12 @@ HEALTHCHECK CMD git --version || exit 1
 # Clone repo
 RUN git clone https://github.com/senzing-factory/github-action-github-issue-creation.git
 
-# Checkout to target branch and if not master, then locally test
-# merging master into branch.
+# Checkout to target branch and if not main, then locally test
+# merging main into branch.
 WORKDIR /go/src/github-action-github-issue-creation
 RUN git checkout ${GITHUB_HEAD_REF}; \
-  if [[ "${GITHUB_HEAD_REF}" != "master" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
-  git merge master; \
+  if [[ "${GITHUB_HEAD_REF}" != "main" && ${GITHUB_EVENT_NAME} == "pull_request" ]]; then \
+  git merge main; \
   fi
 
 # Building go app

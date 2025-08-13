@@ -18,7 +18,7 @@ jobs:
     name: GitHub Creation Demo
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
       - name: GitHub Issue Creation Demo
         uses: senzing-factory/github-action-github-issue-creation@1.0.0
         env:
@@ -30,7 +30,7 @@ jobs:
           GITHUB_SHA: ${{ github.sha }}
 ```
 
-Go [here](deployment/github-actions/template_github_issue_creation.yml) for a template yml with all environment variables.
+Go to [template_github_issue_creation.yml] for a template yml with all environment variables.
 
 ## Environment Variables
 
@@ -47,9 +47,14 @@ These are the environment variables that can be set to pass in additional inform
 
 ## Reference
 
-- [Using environment variables](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-environment-variables) lists the default environment variables set in Git Actions.
-- [Authenticating with the GITHUB_TOKEN](https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token)
+- [Using environment variables] lists the default environment variables set in Git Actions.
+- [Authenticating with the GITHUB_TOKEN]
 
 ## License
 
-[Apache 2](LICENSE)
+[Apache 2]
+
+[Apache 2]: LICENSE
+[Authenticating with the GITHUB_TOKEN]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token
+[template_github_issue_creation.yml]: deployment/github-actions/template_github_issue_creation.yml
+[Using environment variables]: https://help.github.com/en/actions/automating-your-workflow-with-github-actions/using-environment-variables
