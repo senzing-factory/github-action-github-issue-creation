@@ -18,7 +18,7 @@ jobs:
     name: GitHub Creation Demo
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@master
+      - uses: actions/checkout@v5
       - name: GitHub Issue Creation Demo
         uses: senzing-factory/github-action-github-issue-creation@1.0.0
         env:
