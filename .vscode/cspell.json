@@ -2,20 +2,24 @@
   "version": "0.2",
   "language": "en",
   "words": [
-    "alnum",
-    "appengine",
-    "buildx",
     "CCLA",
     "CODEOWNER",
     "DOCKERHUB",
-    "gofmt",
-    "gomod",
     "HTMLURL",
     "ICLA",
-    "pydevproject",
     "Senzing",
+    "alnum",
+    "appengine",
+    "buildx",
+    "esbenp",
+    "gofmt",
+    "gomod",
+    "pydevproject",
     "stackoverflow",
     "toplevel"
   ],
-  "ignorePaths": [".git/**", ".gitignore"]
+  "ignorePaths": [
+    ".git/**",
+    ".gitignore"
+  ]
 }
