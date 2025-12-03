@@ -18,8 +18,5 @@
     "stackoverflow",
     "toplevel"
   ],
-  "ignorePaths": [
-    ".git/**",
-    ".gitignore"
-  ]
+  "ignorePaths": [".git/**", ".gitignore"]
 }
