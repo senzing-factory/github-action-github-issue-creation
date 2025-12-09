@@ -1,0 +1,22 @@
+{
+  "version": "0.2",
+  "language": "en",
+  "words": [
+    "CCLA",
+    "CODEOWNER",
+    "DOCKERHUB",
+    "HTMLURL",
+    "ICLA",
+    "Senzing",
+    "alnum",
+    "appengine",
+    "buildx",
+    "esbenp",
+    "gofmt",
+    "gomod",
+    "pydevproject",
+    "stackoverflow",
+    "toplevel"
+  ],
+  "ignorePaths": [".git/**", ".gitignore"]
+}
