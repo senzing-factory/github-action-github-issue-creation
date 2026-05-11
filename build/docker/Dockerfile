@@ -1,7 +1,7 @@
 # -----------------------------------------------------------------------------
 # Stage: build
 # -----------------------------------------------------------------------------
-FROM golang:1.26.1-alpine3.22@sha256:07e91d24f6330432729082bb580983181809e0a48f0f38ecde26868d4568c6ac AS build
+FROM golang:1.26.2-alpine3.22@sha256:7ef941168f213aa115df2e61364d67682129e99dc8188b734139dea862cc7d31 AS build
 
 ARG GITHUB_HEAD_REF="main"
 ARG GITHUB_EVENT_NAME="push"
